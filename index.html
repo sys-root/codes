@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Press Start 2P', cursive;
+        }
+        #node table td {
+            padding: 3.5em;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <section id="node"></section>
+</body>
+
+<script>
+    const collection = {
+        "9" : [7, 4, 22, 3, 14, 23, 13, 1, 16, 11, 2, 15, 8, 10, 26, 20, 6, 12, 5, 17, 21, 25, 24, 9, 18, 19]
+    }
+    const current = new Date().getMonth();
+    const node = document.getElementById("node");
+    console.log(node)
+    const table = document.createElement('table')
+
+    while(collection[current].length) {
+        const tr = document.createElement('tr')
+        collection[current].splice(0, 7).forEach((entry) => {
+            var z = document.createElement('td');
+            z.innerHTML = entry;
+            tr.appendChild(z);
+        }); 
+        table.appendChild(tr);
+    }
+
+    node.appendChild(table)
+</script>
+</html>
